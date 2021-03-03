@@ -1,15 +1,16 @@
 import React, {useEffect, useState } from 'react';
+import {Graph} from './graph'
 
 export const GkiResults = (props) => {
 
     const [output, setOutput] = useState(0)
-    // const [glucose, setGlucose] = useState(80)
-    // const [ketone, setKetone] = useState(2.5)
+    const [glucose, setGlucose] = useState(80)
+    const [ketone, setKetone] = useState(2)
     const [explination, setExplination] = useState('')
 
     useEffect(() => {
-        setOutput(parseFloat((glucose / 18) / ketone).toFixed(2))
-        console.log(output)
+        calcOutput()
+        console.log('effect output', output)
         if(output <= 1) {
             setExplination("You're in the highest therapueitc levels of ketosis")
         } else if(output > 1 && output <= 3) {
@@ -22,13 +23,19 @@ export const GkiResults = (props) => {
             setExplination("You're not in ketosis")
         }
     }, [])
- 
+
+    function calcOutput() {
+        setOutput(parseFloat((glucose / 18) / ketone).toFixed(2))
+        console.log('function output ', output)
+    }
+
 
 
     return (
         <div>
             <p>GKI Results: {output}</p>
             <p>Explination: {explination}</p>
+            <Graph  output={output} />
         </div>
     )
 }
