@@ -35,7 +35,6 @@ export const GkiResults = (props) => {
         <div>
             <p>GKI Results: {output}</p>
             <p>Explination: {explination}</p>
-            <Graph  output={output} />
         </div>
     )
 }
