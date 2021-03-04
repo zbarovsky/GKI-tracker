@@ -10,6 +10,7 @@ function App() {
       </header>
       <body>
         <Route path='/profile' render={() => <Profile /> } />
+        <Route path='/gkiinput' render={() => <GKIinput /> } />
       </body>
     </div>
   );
