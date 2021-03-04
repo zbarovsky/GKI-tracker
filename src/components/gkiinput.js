@@ -14,7 +14,7 @@ const GKIinput = () => {
       <form onSubmit={submitForm}>
         Glucose Level: <input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
         <br />
-        Glucose Level: <input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
+        Keytones: <input type="text" className="keytoneInput" onChange={e => setKeytones(e.target.value)} />
         <br />
         <button>Submit</button>
       </form>
