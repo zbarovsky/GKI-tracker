@@ -1,4 +1,5 @@
 import './App.scss';
+import {Route, Link} from 'react-router-dom';
 import { GkiResults } from './components/gkiResults';
 
 function App() {
@@ -8,7 +9,7 @@ function App() {
         <h1>GKI Tracker</h1>
       </header>
       <body>
-        <GkiResults />
+        <Route path='/profile' render={() => <GkiResults /> } />
       </body>
     </div>
   );

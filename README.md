@@ -1,5 +1,7 @@
 # GKI Tracker Web Application
 
+figma: https://www.figma.com/file/ZvKqWsRlfR6SKRXhSa075B/GKI?node-id=0%3A1
+
 ## AAU
 * I want to be able to input my gluclose and ketosis levels and have it return my GKI
     * formula: (Blood Glucose Result / 18) / Blood Ketone Result = GKI   
