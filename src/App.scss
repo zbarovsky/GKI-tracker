@@ -30,6 +30,7 @@
 
 .App {
 	text-align: center;
+<<<<<<< HEAD
 	font-family: 'Sulphur Point', sans-serif;
 	font-style: normal;
 	line-height: 30px;
@@ -77,6 +78,14 @@ button.white {
 	button {
 		cursor: pointer;
 	}
+=======
+}
+
+.err-text {
+	color: red;
+	margin: 0;
+	padding: 0;
+>>>>>>> added create user form and page
 }
 
 .d3-component {
