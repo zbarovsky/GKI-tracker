@@ -6,6 +6,8 @@ function App() {
       <header>
         <h1>GKI Tracker</h1>
       </header>
+
+      <GKIinput />
     </div>
   );
 }
