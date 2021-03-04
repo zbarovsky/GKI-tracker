@@ -1,6 +1,7 @@
 import './App.scss';
 import {Route, Link} from 'react-router-dom';
 import {Profile} from './components/profile/profile'
+import GKIinput from './components/gkiinput'
 
 function App() {
   return (
