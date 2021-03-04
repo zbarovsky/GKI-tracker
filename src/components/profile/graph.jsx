@@ -5,28 +5,36 @@ export const Graph = (props) => {
 
     const d3Container = useRef(null);
 
-    let mockData = [0,2,4,5,1]
+    let mockData = [0,2,4,5,1,6]
 
     useEffect(() => {
         if(d3Container.current) {
+            
+            const canvasHeight = 400
+            const canvasWidth = 600
+            const scale = 20
+
             const svg = d3.select(d3Container.current)
+                .append("svg")
+                .attr('width', canvasWidth)
+                .attr('height', canvasHeight)
+            
+            svg.selectAll("circle")
+                .data(mockData).enter()
+                    .append("circle")
+                    .style("fill", "blue")
+                    .attr("r", 7)
+                    .attr('cx', (datapoint, iteration) => iteration * 45)
+                    .attr("cy", (datapoint) => canvasHeight - datapoint * scale)
 
-            const update = svg
-                .append('g')
-                .selectAll('text')
-                .data(mockData)
-
-            update.enter()
-                .append('text')
-                .attr('x', (d,i) => i * 25)
-                .attr('y', 40)
-                .style('font-size', 24)
-                .text((d) => d)
-            update 
-                .attr('x', (d,i) => i * 40)
-                .text((d) => d)
-            update.exit()
-                .remove()
+            
+            svg.selectAll("text")
+                .data(mockData).enter()
+                    .append("text")
+                    .attr('x', (datapoint, i) => i * 45 + 10)
+                    .attr('y', (datapoint, i) => canvasHeight - datapoint * scale - 10)
+                    .text(datapoint => datapoint)
+            
         }
     }, [mockData, d3Container.current])
 
