@@ -22,8 +22,9 @@ export const Graph = (props) => {
             svg.selectAll("circle")
                 .data(mockData).enter()
                     .append("circle")
-                    .style("fill", "blue")
-                    .attr("r", 7)
+                    .attr("fill", "none")
+                    .attr("stroke", "#0036E6")
+                    .attr("r", 5)
                     .attr('cx', (datapoint, iteration) => iteration * 45)
                     .attr("cy", (datapoint) => canvasHeight - datapoint * scale)
 
