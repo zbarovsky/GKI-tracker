@@ -10,7 +10,7 @@ export const Profile = (props) => {
         <div>
             <h1>Welcome User</h1>
             <DisplayDate />
-            {/* <GkiResults /> */}
+            <GkiResults />
             <Graph />
             <Explination />
         </div>
