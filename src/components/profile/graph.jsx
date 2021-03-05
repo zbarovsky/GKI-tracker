@@ -1,22 +1,33 @@
 import * as d3 from 'd3';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {useLocation} from 'react-router-dom'
 
 export const Graph = (props) => {
 
     const d3Container = useRef(null);
-
-    console.log(props.output)
     let data = []
     data.push(props.output)
     //console.log(data)
+
+    //const [time, setTime] = useState([])
+    // useEffect(() => {
+    //     let t = new Date().toLocaleTimeString()
+    //     setTime(t)
+    // }, [])
+    
 
     useEffect(() => {
         if(d3Container.current) {
             
             const canvasHeight = 400
             const canvasWidth = 600
-            const scale = 20
+
+            const x = d3.scaleTime().domain([Date.now() - 3 * 60 * 60 * 1000, Date.now() + 12 * 60 * 60 * 1000])
+                .range([0, 800])
+        
+            const y = d3.scaleLinear()
+                .domain([0, 10])
+                .range([400, 0])
 
             const svg = d3.select(d3Container.current)
                 .append("svg")
@@ -29,17 +40,24 @@ export const Graph = (props) => {
                     .attr("fill", "none")
                     .attr("stroke", "#0036E6")
                     .attr("r", 5)
-                    .attr('cx', (datapoint, iteration) => iteration * 45)
-                    .attr("cy", (datapoint) => canvasHeight - datapoint * scale)
+                    .attr('cx', (datapoint, iteration) => iteration + 20)
+                    .attr("cy", (datapoint) => y(datapoint) - 15)
 
             
             svg.selectAll("text")
                 .data(data).enter()
                     .append("text")
-                    .attr('x', (datapoint, i) => i * 45 + 10)
-                    .attr('y', (datapoint, i) => canvasHeight - datapoint * scale - 10)
+                    .attr('x', (datapoint, i) => i * 45 + 30)
+                    .attr('y', (datapoint, i) => y(datapoint) - 20)
                     .text(datapoint => datapoint)
-            
+
+            svg.append("g")
+                .attr("transform", "translate(20,380)")
+                .call(d3.axisBottom(x))
+
+            svg.append('g')
+                .attr("transform", "translate(20, -20)")
+                .call(d3.axisLeft(y))
         }
     }, [props.output, d3Container.current])
 
