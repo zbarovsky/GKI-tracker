@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import FormField from '../FormField/FormField';
 import './CreateUser.css';
+import { AppContext } from '../../AppContext';
 
 const CreateUser = () => {
 	const blankForm = {
@@ -10,9 +12,12 @@ const CreateUser = () => {
 		password: '',
 		confirm: '',
 	};
+	const { setUserInfo } = useContext(AppContext);
 	const [formState, setFormState] = useState(blankForm);
 	const [errors, setErrors] = useState({});
 	const [sent, setSent] = useState(false);
+
+	const history = useHistory();
 
 	function doubleCheckForm() {
 		const errs = {};
@@ -111,9 +116,12 @@ const CreateUser = () => {
 		e.preventDefault();
 		setSent(true);
 		if (doubleCheckForm()) {
-			console.log('signed in'); //replace with actual sign in lol
+			const data = { ...formState, loggedIn: true };
+			localStorage.setItem('BloomUser', JSON.stringify(data));
+			setUserInfo(data);
 		}
 		setSent(false);
+		history.push('/');
 	}
 
 	return (
