@@ -1,31 +1,19 @@
 import React, {useEffect, useState } from 'react';
-import {Graph} from './graph'
+import {useLocation} from 'react-router-dom';
+
 
 export const GkiResults = (props) => {
-
+    //console.log(props)
+    let data = useLocation()
+    console.log('data ', data.state.glucose, data.state.keytones)
     const [output, setOutput] = useState(0)
-    const [glucose, setGlucose] = useState(80)
-    const [ketone, setKetone] = useState(2)
-    const [explination, setExplination] = useState('')
 
     useEffect(() => {
         calcOutput()
-        console.log('effect output', output)
-        if(output <= 1) {
-            setExplination("You're in the highest therapueitc levels of ketosis")
-        } else if(output > 1 && output <= 3) {
-            setExplination("You're in a high therapuetic level of ketosis")
-        } else if (output > 3 && output <= 6) {
-            setExplination("You're in a moderate level of ketosis")
-        } else if (output > 6 && output <= 9) {
-            setExplination("You're in a low level of ketosis")
-        } else {
-            setExplination("You're not in ketosis")
-        }
     }, [])
 
     function calcOutput() {
-        setOutput(parseFloat((glucose / 18) / ketone).toFixed(2))
+        setOutput(parseFloat((data.state.glucose / 18) / data.state.keytones).toFixed(1))
         console.log('function output ', output)
     }
 
@@ -33,8 +21,7 @@ export const GkiResults = (props) => {
 
     return (
         <div>
-            <p>GKI Results: {output}</p>
-            <p>Explination: {explination}</p>
+            <p>Current GKI: {output}</p>
         </div>
     )
 }

@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import {Route, Link} from 'react-router-dom';
+import { Profile } from './profile/profile';
 
 const GKIinput = () => {
   const [glucose, setGlucose] = useState("")
@@ -9,14 +11,17 @@ const GKIinput = () => {
 
   }
 
+  console.log(glucose)
+  console.log(keytones)
+
   return (
     <>
       <form onSubmit={submitForm}>
         Glucose Level: <input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
         <br />
-        Glucose Level: <input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
+        Keyton Level: <input type="text" className="glucoseInput" onChange={e => setKeytones(e.target.value)} />
         <br />
-        <button>Submit</button>
+        <Link to={{pathname:'/profile', state:{glucose: glucose, keytones:keytones}}}><button>Submit</button></Link>
       </form>
       <hr />
     </>
