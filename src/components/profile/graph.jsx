@@ -35,14 +35,24 @@ export const Graph = (props) => {
                     .attr('x', (datapoint, i) => i * 45 + 10)
                     .attr('y', (datapoint, i) => canvasHeight - datapoint * scale - 10)
                     .text(datapoint => datapoint)
+
+            // svg.append("text")
+            //     .attr('class', 'x label')
+            //     .attr('text-anchor', 'end')
+            //     .attr('x', canvasWidth / 2)
+            //     .attr('y', canvasHeight)
+            //     .text('Time')
             
         }
     }, [mockData, d3Container.current])
 
     return (
         <div>
-            <h1>History</h1>
-            <svg className='d3-component' ref={d3Container}/>
+            <div className='graph'>
+                <p className='yText'>Glucose Ketone Index (GKI)</p>
+                <svg className='d3-component D3graph' ref={d3Container}/>
+            </div>
+                <p className='xtext'>Time</p>
         </div>
     )
 }
