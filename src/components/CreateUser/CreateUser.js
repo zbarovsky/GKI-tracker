@@ -167,7 +167,7 @@ const CreateUser = () => {
 					err={errors.confirm}
 					handleChange={validatePassword}
 				/>
-				<button type='submit' disabled={sent}>
+				<button type='submit' disabled={sent} className='blue'>
 					Next
 				</button>
 			</form>

@@ -30,10 +30,51 @@
 
 .App {
 	text-align: center;
+	font-family: 'Sulphur Point', sans-serif;
+	font-style: normal;
+	line-height: 30px;
+	letter-spacing: 0.11em;
+	font-weight: 300;
+}
+
+button.blue {
+	margin: 20px auto 3px auto;
+	background: #0036e6;
+	padding: 10px;
+	border-radius: 15px;
+	color: white;
+	border: none;
+	min-width: 100px;
+	font-size: 15px;
+	height: 56px;
+}
+
+button.white {
+	margin: 20px auto 3px auto;
+	background: white;
+	padding: 10px;
+	border-radius: 15px;
+	color: #0036e6;
+	border: 0.5px solid #0036e6;
+	min-width: 100px;
+	font-size: 15px;
+	height: 56px;
+}
+
+.err {
+	border-color: rgba(0, 54, 230, 0.5);
 }
 
 .err-text {
-	color: red;
+	color: rgba(0, 54, 230, 0.5);
 	margin: 0;
 	padding: 0;
+	text-align: left;
+	font-size: 14px;
+}
+
+@media (hover: hover) {
+	button {
+		cursor: pointer;
+	}
 }

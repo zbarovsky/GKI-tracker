@@ -1,0 +1,17 @@
+.logo {
+	height: 42px;
+	text-align: center;
+	margin: 0 auto;
+	font-style: normal;
+	font-weight: 300;
+	font-size: 48px;
+	line-height: 48px;
+	text-transform: uppercase;
+	color: #000000;
+}
+
+.welcome-buttons {
+	display: flex;
+	flex-direction: column;
+	margin-top: 100px;
+}
