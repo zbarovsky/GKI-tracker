@@ -96,3 +96,33 @@ button.white {
 .information {
 	text-align: left;
 }
+
+.d3-component {
+  width: 600px;
+  height: 400px;
+}
+
+.graph {
+  display: inline-flex;
+}
+
+.yText {
+  margin: auto;
+  padding-right: 1em;
+}
+
+
+.explination {
+  margin: auto;
+  padding: 1em;
+  width: 50%;
+  background-color: rgba(81, 90, 224, 0.1);
+  border-radius: 30px;
+}
+
+.information {
+  text-align: left;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
