@@ -1,4 +1,5 @@
 import React, {useEffect, useState } from 'react';
+import {Graph} from './graph'
 import {useLocation} from 'react-router-dom';
 
 
@@ -24,6 +25,7 @@ export const GkiResults = (props) => {
     return (
         <div>
             <p>Current GKI: {output}</p>
+            <Graph output={output}/>
         </div>
     )
 }

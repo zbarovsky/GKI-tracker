@@ -10,7 +10,6 @@ export const Profile = (props) => {
         <div>
             <DisplayDate />
             <GkiResults />
-            <Graph />
             <Explination />
         </div>
     )

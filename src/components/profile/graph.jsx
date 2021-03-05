@@ -1,11 +1,15 @@
 import * as d3 from 'd3';
 import { useEffect, useRef } from 'react';
+import {useLocation} from 'react-router-dom'
 
 export const Graph = (props) => {
 
     const d3Container = useRef(null);
 
-    let mockData = [0,2,4,5,1,6]
+    console.log(props.output)
+    let data = []
+    data.push(props.output)
+    //console.log(data)
 
     useEffect(() => {
         if(d3Container.current) {
@@ -20,7 +24,7 @@ export const Graph = (props) => {
                 .attr('height', canvasHeight)
             
             svg.selectAll("circle")
-                .data(mockData).enter()
+                .data(data).enter()
                     .append("circle")
                     .attr("fill", "none")
                     .attr("stroke", "#0036E6")
@@ -30,21 +34,14 @@ export const Graph = (props) => {
 
             
             svg.selectAll("text")
-                .data(mockData).enter()
+                .data(data).enter()
                     .append("text")
                     .attr('x', (datapoint, i) => i * 45 + 10)
                     .attr('y', (datapoint, i) => canvasHeight - datapoint * scale - 10)
                     .text(datapoint => datapoint)
-
-            // svg.append("text")
-            //     .attr('class', 'x label')
-            //     .attr('text-anchor', 'end')
-            //     .attr('x', canvasWidth / 2)
-            //     .attr('y', canvasHeight)
-            //     .text('Time')
             
         }
-    }, [mockData, d3Container.current])
+    }, [props.output, d3Container.current])
 
     return (
         <div>
