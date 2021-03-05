@@ -1,25 +1,100 @@
 @mixin for-phone-only {
-  @media (max-width: 599px) { @content };
+	@media (max-width: 599px) {
+		@content;
+	}
 }
 
 @mixin for-tablet-portrait-up {
-  @media (min-width: 600px) { @content };
+	@media (min-width: 600px) {
+		@content;
+	}
 }
 
 @mixin for-tablet-landscape-up {
- @media (min-width: 900px) {@content};
+	@media (min-width: 900px) {
+		@content;
+	}
 }
 
 @mixin for-desktop-up {
-  @media (min-width: 1200px) {@content};
+	@media (min-width: 1200px) {
+		@content;
+	}
 }
 
 @mixin for-big-desktop-up {
-  @media (min-width: 1800px) {@content};
+	@media (min-width: 1800px) {
+		@content;
+	}
 }
 
 .App {
-  text-align: center;
+	text-align: center;
+	font-family: 'Sulphur Point', sans-serif;
+	font-style: normal;
+	line-height: 30px;
+	letter-spacing: 0.11em;
+	font-weight: 300;
+}
+
+button.blue {
+	margin: 20px auto 3px auto;
+	background: #0036e6;
+	padding: 10px;
+	border-radius: 15px;
+	color: white;
+	border: none;
+	min-width: 100px;
+	font-size: 15px;
+	height: 56px;
+}
+
+button.white {
+	margin: 20px auto 3px auto;
+	background: white;
+	padding: 10px;
+	border-radius: 15px;
+	color: #0036e6;
+	border: 0.5px solid #0036e6;
+	min-width: 100px;
+	font-size: 15px;
+	height: 56px;
+}
+
+.err {
+	border-color: rgba(0, 54, 230, 0.5);
+}
+
+.err-text {
+	color: rgba(0, 54, 230, 0.5);
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	font-size: 14px;
+}
+
+@media (hover: hover) {
+	button {
+		cursor: pointer;
+	}
+}
+
+.d3-component {
+	width: 600px;
+	height: 400px;
+	border: 1px solid black;
+}
+
+.explination {
+	margin: auto;
+	padding: 1em;
+	width: 50%;
+	background-color: rgba(81, 90, 224, 0.1);
+	border-radius: 30px;
+}
+
+.information {
+	text-align: left;
 }
 
 .d3-component {
