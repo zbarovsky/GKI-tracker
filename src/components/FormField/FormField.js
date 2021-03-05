@@ -8,7 +8,6 @@ const FormField = ({
 	handleChange,
 	value,
 }) => {
-<<<<<<< HEAD
 	const styles = {
 		border: '0.5px solid #C4C4C4',
 		boxSizing: 'border-box',
@@ -21,11 +20,6 @@ const FormField = ({
 		<>
 			<input
 				style={styles}
-=======
-	return (
-		<>
-			<input
->>>>>>> added create user form and page
 				className={!err ? '' : 'err'}
 				required={required}
 				type={type}

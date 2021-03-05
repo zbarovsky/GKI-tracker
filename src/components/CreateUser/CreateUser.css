@@ -1,20 +1,14 @@
 .sign-up-box {
 	width: 330px;
 	margin: 30px auto;
-<<<<<<< HEAD
 	padding: 40px;
 	background: rgba(81, 90, 224, 0.1);
 	border-radius: 30px;
-=======
-	padding: 10px;
-	background-color: #ffffff;
->>>>>>> added create user form and page
 }
 
 .sign-up-box h1 {
 	margin: 3px 0 7px 0;
 	padding: 0;
-<<<<<<< HEAD
 	font-weight: 300;
 }
 
@@ -22,17 +16,12 @@
 	font-size: 12px;
 	line-height: 1.2em;
 	text-align: left;
-=======
->>>>>>> added create user form and page
 }
 
 .sign-up-box form {
 	display: flex;
 	flex-direction: column;
 }
-
-<<<<<<< HEAD
-=======
 .sign-up-form input {
 	width: 300px;
 	font-size: 20px;
@@ -40,8 +29,6 @@
 	display: block;
 	margin: 3px auto;
 }
-
->>>>>>> added create user form and page
 label {
 	text-align: left;
 }
