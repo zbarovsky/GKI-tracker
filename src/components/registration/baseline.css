@@ -1,0 +1,11 @@
+.box {
+    width: 330px;
+    margin: 30px auto;
+    padding: 40px;
+    background: rgba(81, 90, 224, 0.1);
+    border-radius: 30px;
+}
+
+h2 {
+    font-weight: 300;
+}
