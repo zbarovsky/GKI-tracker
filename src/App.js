@@ -10,7 +10,7 @@ function App() {
         <h1>GKI Tracker</h1>
       </header>
       <body>
-        <Route path='/profile' render={() => <Profile /> } />
+        <Route path='/profile' render={(props) => <Profile /> } />
         <Route path='/gkiinput' render={() => <GKIinput /> } />
       </body>
     </div>
