@@ -126,3 +126,23 @@ button.white {
   padding-right: 1em;
 }
 
+#form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.keytoneInput, .glucoseInput {
+  width: 3em;
+  height: 2em;
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+label {
+  margin-bottom: 1em;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 15px;
+}
