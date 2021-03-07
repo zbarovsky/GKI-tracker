@@ -1,4 +1,5 @@
 import './baseline.css'
+import {Link} from 'react-router-dom';
 
 export const Baseline = (props) => {
   return (
@@ -29,6 +30,11 @@ export const Baseline = (props) => {
     <br/>
     <p>Tracking all of these events aren’t required, but the more readings you take, the more insight you’ll gain in your ketosis</p>
     </div>
+    <Link to={{pathname:'/signup'}}>
+    <button>
+    Next
+    </button>
+    </Link>
     </div>
 
   )
