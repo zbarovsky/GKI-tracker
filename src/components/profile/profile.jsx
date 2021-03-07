@@ -8,7 +8,6 @@ export const Profile = (props) => {
 
     return (
         <div>
-            <DisplayDate />
             <GkiResults />
             <Explination />
         </div>

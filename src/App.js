@@ -20,7 +20,6 @@ function App() {
 	return (
 		<div className='App'>
 			<header>
-				<h1>GKI Tracker</h1>
 			</header>
 			<body>
 				<Route path='/' exact render={() => <Home />} />

@@ -28,6 +28,11 @@
 	}
 }
 
+$font-standard: 'Sulphur Point', sans-serif;
+$button-blue: #0036e6;
+$text-background-color: rgba(81, 90, 224, 0.1);
+$err-text-color: rgba(0, 54, 230, 0.5);
+
 .App {
 	text-align: center;
 	font-family: 'Sulphur Point', sans-serif;
@@ -87,48 +92,65 @@ button.white {
 	overflow: hidden;
 }
 
-.explination {
-	margin: auto;
-	padding: 1em;
-	width: 50%;
-	background-color: rgba(81, 90, 224, 0.1);
-	border-radius: 30px;
-}
-
-.information {
-	text-align: left;
-}
-
 .d3-component {
   width: 600px;
   height: 400px;
+  font-family: $font-standard;
 }
 
-.graph {
-  display: inline-flex;
+.yAxis {
+	display: inline-flex;
+	padding-bottom: 0;
 }
+
 
 .yText {
   margin: auto;
-  padding-right: 1em;
-  font-size: 1em;
+  padding-right: 0;
+  font-size: 0.75rem;
 }
 
 .xText {
 	font-size: 1em;
+	margin-top: 0;
 }
 
 .explination {
   margin: auto;
   padding: 1em;
+  margin-bottom: 1em;
   width: 50%;
-  background-color: rgba(81, 90, 224, 0.1);
+  background-color: $text-background-color;
   border-radius: 30px;
+
+  @include for-phone-only {
+	  width: 75%
+  }
 }
 
 .information {
-  text-align: left;
-  padding-left: 1em;
-  padding-right: 1em;
+	font-family: $font-standard;
+	text-align: left;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
+.displayDate {
+	font-family: $font-standard;
+	font-size: 1.5rem;
+}
+
+.date {
+	margin: 0;
+}
+
+.currentGKI {
+	font-family: $font-standard;
+	padding-top: 1em;
+	margin: 0;
+	font-size: 1.5rem;
+}
+
+.graph {
+	font-family: $font-standard;
+}

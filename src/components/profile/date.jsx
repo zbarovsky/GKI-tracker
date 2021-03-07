@@ -25,6 +25,7 @@ export const DisplayDate = () => {
     function calculateDay() {
         switch(date) {
             case 0:
+            case 7:
                 setDay("Sunday")
                 break;
             case 1:
@@ -94,9 +95,9 @@ export const DisplayDate = () => {
 
 
     return (
-        <div>
-            <p>{day}</p>
-            <p>{nameMonth} {date}, {year}</p>
+        <div className='displayDate'>
+            <p className='date'>{day}</p>
+            <p className='date'>{nameMonth} {date}, {year}</p>
         </div>
     )
 }
