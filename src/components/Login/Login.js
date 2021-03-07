@@ -59,7 +59,6 @@ const Login = () => {
 		<div className='container sign-up-box'>
 			<form className='form-stack sign-up-form' onSubmit={handleSubmit}>
 				<h1>Log in</h1>
-				<label htmlFor='firstName'>First Name:</label>
 				<label htmlFor='email'>Email:</label>
 				<FormField
 					type='email'
