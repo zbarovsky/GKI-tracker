@@ -16,10 +16,12 @@ const GKIinput = () => {
 
   return (
     <>
-      <form onSubmit={submitForm}>
-        Glucose Level: <input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
+      <form id="form" onSubmit={submitForm}>
+        <label>Glucose level:</label><input type="text" className="glucoseInput" onChange={e => setGlucose(e.target.value)} />
         <br />
-        Keyton Level: <input type="text" className="glucoseInput" onChange={e => setKeytones(e.target.value)} />
+        <label>Keytones:</label> <input type="text" className="keytoneInput" onChange={e => setKeytones(e.target.value)} />
+        <br />
+        <label>Keytone Level:</label> <input type="text" className="glucoseInput" onChange={e => setKeytones(e.target.value)} />
         <br />
         <Link to={{pathname:'/profile', state:{glucose: glucose, keytones:keytones}}}><button>Submit</button></Link>
       </form>

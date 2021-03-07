@@ -8,9 +8,9 @@ import { AppContext } from './AppContext';
 import { useContext } from 'react';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
+import Nav from './components/Nav/Nav';
 
 function App() {
-
 	const { userInfo, setUserInfo } = useContext(AppContext);
 
 	if (!userInfo) {
@@ -19,8 +19,7 @@ function App() {
 
 	return (
 		<div className='App'>
-			<header>
-			</header>
+			<Nav />
 			<body>
 				<Route path='/' exact render={() => <Home />} />
 				<Route path='/profile' render={() => <Profile />} />
