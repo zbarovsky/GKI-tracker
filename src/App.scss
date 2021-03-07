@@ -79,9 +79,12 @@ button.white {
 	}
 }
 
-.d3-component {
-	width: 600px;
-	height: 400px;
+.svg-container {
+	position: relative;
+	width: 100%;
+	padding-bottom: 100%;
+	vertical-align: top;
+	overflow: hidden;
 }
 
 .explination {
@@ -108,8 +111,12 @@ button.white {
 .yText {
   margin: auto;
   padding-right: 1em;
+  font-size: 1em;
 }
 
+.xText {
+	font-size: 1em;
+}
 
 .explination {
   margin: auto;
