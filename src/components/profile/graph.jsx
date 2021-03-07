@@ -5,8 +5,9 @@ export const Graph = (props) => {
 
     const d3Container = useRef(null);
     let data = []
-    data.push(props.output)
-    //console.log(data)
+    let parse = parseFloat(props.output)
+    data.push(parse)
+    console.log(data)
 
     useEffect(() => {
         if(d3Container.current) {
@@ -46,7 +47,6 @@ export const Graph = (props) => {
                     .attr('cx', (datapoint, iteration) => xScale(Date.now()) + 15)
                     .attr("cy", (datapoint) => yScale(datapoint) + 10)
 
-            
             // svg.selectAll("text")
             //     .data(data).enter()
             //         .append("text")
@@ -67,7 +67,7 @@ export const Graph = (props) => {
     return (
         <div className='graph'>
             <div className='yAxis'>
-                <p className='yText'>Glucose Ketone Index (GKI)</p>
+                <p className='yText'>Glucose<br></br>Ketone<br></br>Index<br></br>(GKI)</p>
                 <svg className='d3-component' ref={d3Container}/>
             </div>
                 <p className='xText'>Time</p>
