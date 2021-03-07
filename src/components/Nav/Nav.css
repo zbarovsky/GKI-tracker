@@ -1,0 +1,11 @@
+.nav-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100vw;
+	border-bottom: 1.5px solid #0036e6;
+}
+
+.nav-container a {
+	text-decoration: none;
+}
