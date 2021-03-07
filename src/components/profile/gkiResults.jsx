@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react';
-import {Graph} from './graph'
+import {Graph} from './graph';
+import {DisplayDate} from './date'
 import {useLocation} from 'react-router-dom';
 
 
@@ -24,7 +25,8 @@ export const GkiResults = (props) => {
 
     return (
         <div>
-            <p>Current GKI: {output}</p>
+            <p className='currentGKI'>Current GKI: <strong>{output}</strong></p>
+            <DisplayDate />
             <Graph output={output}/>
         </div>
     )

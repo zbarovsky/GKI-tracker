@@ -5,27 +5,38 @@ export const Graph = (props) => {
 
     const d3Container = useRef(null);
     let data = []
-    data.push(props.output)
-    //console.log(data)
+    let parse = parseFloat(props.output)
+    data.push(parse)
+    console.log(data)
 
     useEffect(() => {
         if(d3Container.current) {
             
             const canvasHeight = 400
             const canvasWidth = 600
-
-            const x = d3.scaleTime()
-                .domain([Date.now() - 3 * 60 * 60 * 1000, Date.now() + 12 * 60 * 60 * 1000])
-                .range([0, 800])
-        
-            const y = d3.scaleLinear()
-                .domain([0, 10])
-                .range([400, 0])
+            const margin = {top: 0, bottom: 20, left: 30, right: 20};
+            const strokeWidth = 1.5;
 
             const svg = d3.select(d3Container.current)
                 .append("svg")
-                .attr('width', canvasWidth)
-                .attr('height', canvasHeight)
+                .attr("viewBox", `0 0 600 400`)
+                .attr('preserveAspectRatio', 'xMinYMin')
+
+            const width = 600 - margin.left - margin.right - (strokeWidth * 2)
+            const height = 400 - margin.top - margin.bottom
+            
+            const xScale = d3.scaleTime()
+                .domain([Date.now() - 2 * 60 * 60 * 1000, Date.now() + 6 * 60 * 60 * 1000])
+                .range([0, width])
+        
+            const yScale = d3.scaleLinear()
+                .domain([0, 10])
+                .range([height, 0])
+
+            const area = d3.area()
+                .x(dataPoint => xScale(Date.now()))
+                .y0(height)
+                .y1(dataPoint => yScale(data))
             
             svg.selectAll("circle")
                 .data(data).enter()
@@ -33,34 +44,33 @@ export const Graph = (props) => {
                     .attr("fill", "none")
                     .attr("stroke", "#0036E6")
                     .attr("r", 5)
-                    .attr('cx', (datapoint, iteration) => x(Date.now()) + 15)
-                    .attr("cy", (datapoint) => y(datapoint) - 15)
+                    .attr('cx', (datapoint, iteration) => xScale(Date.now()) + 15)
+                    .attr("cy", (datapoint) => yScale(datapoint) + 10)
 
-            
-            svg.selectAll("text")
-                .data(data).enter()
-                    .append("text")
-                    .attr('x', (datapoint, i) => x(Date.now()) + 15)
-                    .attr('y', (datapoint, i) => y(datapoint) - 20)
-                    .text(datapoint => datapoint)
+            // svg.selectAll("text")
+            //     .data(data).enter()
+            //         .append("text")
+            //         .attr('x', (datapoint, i) => xScale(Date.now()))
+            //         .attr('y', (datapoint, i) => yScale(datapoint))
+            //         .text(datapoint => datapoint)
 
             svg.append("g")
                 .attr("transform", "translate(20,380)")
-                .call(d3.axisBottom(x))
+                .call(d3.axisBottom(xScale))
 
             svg.append('g')
-                .attr("transform", "translate(20, -20)")
-                .call(d3.axisLeft(y))
+                .attr("transform", "translate(20, 0)")
+                .call(d3.axisLeft(yScale))
         }
     }, [data, d3Container.current])
 
     return (
-        <div>
-            <div className='graph'>
-                <p className='yText'>Glucose Ketone Index (GKI)</p>
-                <svg className='d3-component D3graph' ref={d3Container}/>
+        <div className='graph'>
+            <div className='yAxis'>
+                <p className='yText'>Glucose<br></br>Ketone<br></br>Index<br></br>(GKI)</p>
+                <svg className='d3-component' ref={d3Container}/>
             </div>
-                <p className='xtext'>Time</p>
+                <p className='xText'>Time</p>
         </div>
     )
 }
