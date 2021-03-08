@@ -18,10 +18,6 @@ const Login = () => {
 		return <Redirect to='/gkiinput' />;
 	}
 
-	if (!userInfo) {
-		return 'Loading...';
-	}
-
 	function handleSubmit(e) {
 		const data = JSON.parse(localStorage.getItem('BloomUser'));
 		e.preventDefault();
