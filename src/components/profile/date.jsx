@@ -15,7 +15,7 @@ export const DisplayDate = () => {
 
     function getDate() {
         let newDate = new Date()
-        setDate(newDate.getDate())
+        setDate(newDate.getDay())
         setMonth(newDate.getMonth() +1)
         setYear(newDate.getFullYear())
         calculateDay()
@@ -23,11 +23,8 @@ export const DisplayDate = () => {
     }
 
     function calculateDay() {
+        console.log(date)
         switch(date) {
-            case 0:
-            case 7:
-                setDay("Sunday")
-                break;
             case 1:
                 setDay("Monday")
                 break;
@@ -45,6 +42,9 @@ export const DisplayDate = () => {
                 break;
             case 6:
                 setDay("Saturday")
+                break;
+            case 0:
+                setDay("Sunday")
                 break;
             default:
                 setDay("Error")
