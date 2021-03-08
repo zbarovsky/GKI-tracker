@@ -119,9 +119,9 @@ const CreateUser = () => {
 			const data = { ...formState, loggedIn: true };
 			localStorage.setItem('BloomUser', JSON.stringify(data));
 			setUserInfo(data);
+			history.push('/gkiinput');
 		}
 		setSent(false);
-		history.push('/');
 	}
 
 	return (

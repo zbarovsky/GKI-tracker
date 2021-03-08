@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { AppContext } from '../../AppContext';
 import FormField from '../FormField/FormField';
 
@@ -15,11 +15,7 @@ const Login = () => {
 	const [sent, setSent] = useState(false);
 
 	if (userInfo?.loggedIn) {
-		return <Redirect to='/' />;
-	}
-
-	if (!userInfo) {
-		return 'Loading...';
+		return <Redirect to='/gkiinput' />;
 	}
 
 	function handleSubmit(e) {
@@ -33,7 +29,7 @@ const Login = () => {
 			data.loggedIn = true;
 			localStorage.setItem('BloomUser', JSON.stringify(data));
 			setUserInfo(data);
-			return <Redirect to='/' />;
+			return <Redirect to='/gkiinput' />;
 		} else {
 			setErrors({
 				password: 'Incorrect email or password',
@@ -79,6 +75,9 @@ const Login = () => {
 					Log In
 				</button>
 			</form>
+			<p style={{ textAlign: 'center' }}>
+				Don't have an account? <Link to='/signup'>Sign Up</Link>
+			</p>
 		</div>
 	);
 };

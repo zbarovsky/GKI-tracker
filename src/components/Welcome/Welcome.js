@@ -8,7 +8,7 @@ const Welcome = () => {
 		<div>
 			<h1 className='logo'>BLOOM</h1>
 			<div className='welcome-buttons'>
-				<button className='blue' onClick={() => history.push('signup')}>
+				<button className='blue' onClick={() => history.push('baseline')}>
 					I'M NEW HERE
 				</button>
 				<button className='white' onClick={() => history.push('login')}>
