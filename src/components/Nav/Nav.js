@@ -5,12 +5,12 @@ import './Nav.css';
 const Nav = () => {
 	return (
 		<header class='nav-container'>
-			<Link to='/'>
+			<Link to='/gkiinput'>
 				<h1 className='logo'>BLOOM</h1>
 			</Link>
 			<div className='nav-menu'>
-				<Link to='/'>Home</Link>
-				<Link to='/'>Account</Link>
+				<Link to='/gkiinput'>Home</Link>
+				<Link to='/account'>Account</Link>
 			</div>
 		</header>
 	);

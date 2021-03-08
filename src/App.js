@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Nav from './components/Nav/Nav';
-import {Baseline} from './components/registration/baseline'
+import { Baseline } from './components/registration/baseline';
 
 function App() {
 	const { userInfo, setUserInfo } = useContext(AppContext);
@@ -22,8 +22,8 @@ function App() {
 		<div className='App'>
 			<Nav />
 			<body>
-				<Route path='/' exact render={() => <Home />} />
-				<Route path='/baseline' render={() => <Baseline />}/>
+				<Route path='/account' exact render={() => <Home />} />
+				<Route path='/baseline' render={() => <Baseline />} />
 				<Route path='/profile' render={() => <Profile />} />
 				<Route path='/gkiinput' render={() => <GKIinput />} />
 				<Route path='/signup' render={() => <CreateUser />} />

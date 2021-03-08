@@ -9,7 +9,7 @@ const Home = () => {
 		return 'Loading...';
 	}
 	if (userInfo?.loggedIn === false) {
-		return <Redirect to='login' />;
+		return <Redirect to='welcome' />;
 	}
 
 	const logOut = () => {
