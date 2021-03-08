@@ -21,9 +21,7 @@ const GKIinput = () => {
         <br />
         <label>Keytones:</label> <input type="text" className="keytoneInput" onChange={e => setKeytones(e.target.value)} />
         <br />
-        <label>Keytone Level:</label> <input type="text" className="glucoseInput" onChange={e => setKeytones(e.target.value)} />
-        <br />
-        <Link to={{pathname:'/profile', state:{glucose: glucose, keytones:keytones}}}><button>Submit</button></Link>
+        <Link to={{pathname:'/profile', state:{glucose: glucose, keytones:keytones}}}><button className="blue">Submit</button></Link>
       </form>
       <hr />
     </>
