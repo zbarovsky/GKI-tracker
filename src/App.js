@@ -27,7 +27,7 @@ function App() {
 				<Route path='/profile' render={() => <Profile />} />
 				<Route path='/gkiinput' render={() => <GKIinput />} />
 				<Route path='/signup' render={() => <CreateUser />} />
-				<Route path='/welcome' render={() => <Welcome />} />
+				<Route path='/' exact render={() => <Welcome />} />
 				<Route path='/login' render={() => <Login />} />
 			</body>
 		</div>
