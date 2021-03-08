@@ -8,7 +8,7 @@ export const Baseline = (props) => {
     A baseline is your foundation for success
     </h2>
     <p>
-    Taking multiple readings of both your <b>blood glucose</b>blood glucose and <b>ketone levels</b> will help you understand how certain activities and mind sets impact your ability to remain in metabolic ketosis.
+    Taking multiple readings of both your <b>blood glucose</b> and <b>ketone levels</b> will help you understand how certain activities and mind sets impact your ability to remain in metabolic ketosis.
     </p>
     <p>
     We suggest taking multiple readings of both your blood glucose and ketone levels for at least 7 days.
