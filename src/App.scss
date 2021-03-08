@@ -151,6 +151,7 @@ button.white {
 }
 
 #form {
+  background-color: $text-background-color;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
@@ -169,5 +170,5 @@ label {
   font-family: Helvetica;
   font-weight: bold;
   font-size: 15px;
-
+  margin: 0 auto;
 }
