@@ -22,6 +22,7 @@ function App() {
 		<div className='App'>
 			<Nav />
 			<body>
+				<Route path='/' exact render={() => <Redirect to='/welcome' />} />
 				<Route path='/account' exact render={() => <Home />} />
 				<Route path='/baseline' render={() => <Baseline />} />
 				<Route path='/profile' render={() => <Profile />} />
